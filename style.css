@@ -1,0 +1,21 @@
+
+.container {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.col {
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    border-radius: 10px;
+    border: 3px solid black;
+}
