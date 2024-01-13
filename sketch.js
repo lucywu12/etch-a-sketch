@@ -1,8 +1,3 @@
-
-const box = document.getElementsByClassName("container")[0];
-let num = prompt("How many squares per side for the grid? (max 100)");
-makeGrid(num);
-
 function makeGrid(num) {
     if (num > 100) {
         alert("ERROR: please enter a number less than 100");
@@ -19,6 +14,19 @@ function makeGrid(num) {
     }
 }
 
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+//user prompts
+const box = document.getElementsByClassName("container")[0];
+let num = prompt("How many squares per side for the grid? (max 100)");
+makeGrid(num);
 
 //mouse enters, mouse leaves
 //can technically also use bubbling (?) not quite there yet
@@ -30,7 +38,8 @@ squares.forEach(square => {
     });
 
     square.addEventListener('mouseleave', () => {
-        square.style.backgroundColor = 'red';
+        square.style.backgroundColor = getRandomColor();
+        //can add square darkening here
     })
 });
 
